@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Scramble</string>
+    <string name="cipher_label_text">Select cipher</string>
+    <string name="coordinate_label_text">Enter coordinates</string>
+    <string name="encode_button_text">Encode</string>
+    <string name="decode_button_text">Decode</string>
+    <string name="result_copied">Coordinates copied</string>
+    <string name="swap_items">Swap items</string>
+    <string name="copy">Copy</string>
+    <string name="show">Show</string>
+    <string-array name="ciphers_strings">
+        <item>Alpha 1</item>
+        <item>Bravo 2</item>
+        <item>Charlie 3</item>
+        <item>Delta 4</item>
+        <item>Echo 5</item>
+        <item>Alpha 6</item>
+        <item>Bravo 7</item>
+        <item>Charlie 8</item>
+        <item>Delta 9</item>
+        <item>Echo 10</item>
+    </string-array>
+</resources>
