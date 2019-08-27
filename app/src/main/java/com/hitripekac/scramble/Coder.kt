@@ -15,7 +15,7 @@ class Coder {
             "0145678923"
     )
     private var decodingMap: Array<String> = arrayOf(
-            "0357198624",
+            "0481827365",
             "0456789123",
             "0987564321",
             "0987192465",

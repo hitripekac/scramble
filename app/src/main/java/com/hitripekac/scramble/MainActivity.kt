@@ -7,14 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.logging.Logger
 
-class MyTextWatcher(private val runner: (String) -> Unit) : TextWatcher {
-    override fun afterTextChanged(p0: Editable?) {}
-
-    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-    override fun onTextChanged(sequence: CharSequence?, start: Int, before: Int, count: Int) {
-        runner(sequence.toString())
-    }
+class ChangeWatcher(private val runner: (String) -> Unit) : TextWatcher {
+    override fun afterTextChanged(p0: Editable?) = Unit
+    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) = Unit
+    override fun onTextChanged(sequence: CharSequence?, start: Int, before: Int, count: Int) = runner(sequence.toString())
 }
 
 
@@ -27,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        decodedCoordinates.addTextChangedListener(MyTextWatcher { coordinates ->
+        decodedCoordinates.addTextChangedListener(ChangeWatcher { coordinates ->
             logger.info("input: $coordinates")
             val encoded = coder.encodeCoordinate(coordinates, cipher)
             if (decodedCoordinates.isFocused) {
@@ -35,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        encodedCoordinates.addTextChangedListener(MyTextWatcher { coordinates ->
+        encodedCoordinates.addTextChangedListener(ChangeWatcher { coordinates ->
             logger.info("input: $coordinates")
             val decoded = coder.decodeCoordinate(coordinates, cipher)
             if (encodedCoordinates.isFocused) {
