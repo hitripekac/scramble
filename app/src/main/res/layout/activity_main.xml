@@ -9,59 +9,13 @@
     tools:layout_editor_absoluteY="89dp">
 
 
-    <Button
-        android:id="@+id/copyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:enabled="false"
-        android:text="@string/copy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/encodedCoordinates" />
-
-    <EditText
-        android:id="@+id/encodedCoordinates"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/encodedLabel" />
-
-    <EditText
-        android:id="@+id/decodedCoordinates"
-        android:layout_width="0dp"
-        android:layout_height="59dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:maxLines="1"
-        android:padding="10dp"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/decodedLabel" />
-
     <Spinner
         android:id="@+id/cipherSelect"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="@dimen/default_padding"
+        android:layout_marginTop="@dimen/default_padding"
+        android:layout_marginEnd="@dimen/default_padding"
         android:entries="@array/ciphers_strings"
         android:padding="10dp"
         android:spinnerMode="dialog"
@@ -70,52 +24,67 @@
         app:layout_constraintTop_toBottomOf="@+id/selectCipherLabel" />
 
     <TextView
-        android:id="@+id/encodedLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:labelFor="@id/encodedCoordinates"
-        android:text="@string/encoded_coordinates"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/decodedCoordinates" />
-
-    <TextView
-        android:id="@+id/decodedLabel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:labelFor="@id/decodedCoordinates"
-        android:text="@string/decoded_coordinates"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.TextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cipherSelect" />
-
-    <TextView
         android:id="@+id/selectCipherLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="@dimen/default_padding"
+        android:layout_marginTop="@dimen/default_padding"
+        android:layout_marginEnd="@dimen/default_padding"
         android:labelFor="@id/cipherSelect"
         android:text="@string/cipher_label_text"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.TextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/decodedCoordinatesContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_padding"
+        android:layout_marginTop="@dimen/default_padding"
+        android:layout_marginEnd="@dimen/default_padding"
+        android:layout_marginBottom="@dimen/default_padding"
+        app:endIconContentDescription="@string/copy"
+        app:endIconDrawable="@drawable/ic_content_copy_black_24dp"
+        app:endIconMode="custom"
+        app:layout_constraintBottom_toTopOf="@id/encodedCoordinatesContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cipherSelect">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/decodedCoordinates"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/decoded_coordinates" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/encodedCoordinatesContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_padding"
+        android:layout_marginTop="@dimen/default_padding"
+        android:layout_marginEnd="@dimen/default_padding"
+        app:endIconContentDescription="@string/copy"
+        app:endIconDrawable="@drawable/ic_content_copy_black_24dp"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decodedCoordinatesContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/encodedCoordinates"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/encoded_coordinates" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

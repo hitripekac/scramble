@@ -6,10 +6,11 @@
     <string name="decode_button_text">Decode</string>
     <string name="result_copied">Coordinates copied</string>
     <string name="swap_items">Swap items</string>
-    <string name="copy">Copy</string>
-    <string name="show">Show</string>
     <string name="decoded_coordinates">Decoded coordinates</string>
     <string name="encoded_coordinates">Encoded coordinates</string>
+    <string name="copy">Copy</string>
+    <string name="decoded_coordinates_copied">Decoded coordinates copied</string>
+    <string name="encoded_coordinates_copied">Encoded coordinates copied</string>
     <string-array name="ciphers_strings">
         <item>Alpha 1</item>
         <item>Bravo 2</item>
