@@ -9,11 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.logging.Logger
 
 
 class MainActivity : AppCompatActivity() {
-    private val logger = Logger.getLogger(javaClass.name)
     private val coder = Coder()
     private var clipboard: ClipboardManager? = null
 

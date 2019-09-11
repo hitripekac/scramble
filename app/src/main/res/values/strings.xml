@@ -1,11 +1,6 @@
 <resources>
     <string name="app_name">Scramble</string>
     <string name="cipher_label_text">Select cipher</string>
-    <string name="coordinate_label_text">Enter coordinates</string>
-    <string name="encode_button_text">Encode</string>
-    <string name="decode_button_text">Decode</string>
-    <string name="result_copied">Coordinates copied</string>
-    <string name="swap_items">Swap items</string>
     <string name="decoded_coordinates">Decoded coordinates</string>
     <string name="encoded_coordinates">Encoded coordinates</string>
     <string name="copy">Copy</string>
